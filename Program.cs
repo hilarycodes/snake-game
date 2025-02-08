@@ -86,33 +86,15 @@ void FreezePlayer()
 // Reads directional input from the Console and moves the player
 void Move()
 {
-
-
     switch (Console.ReadKey(true).Key)
     {
-        case ConsoleKey.UpArrow:
-            playerY--;
-            break;
-        case ConsoleKey.DownArrow:
-            playerY++;
-            break;
-        case ConsoleKey.LeftArrow:
-            playerX--;
-            break;
-        case ConsoleKey.RightArrow:
-            playerX++;
-            break;
-        case ConsoleKey.Escape:
-            shouldExit = true;
-            break;
-        case ConsoleKey.N:
-            playerX += 5;
-            break;
-        case ConsoleKey.O:
-            playerY += 5;
-            break;
+        case ConsoleKey.UpArrow: playerY--; break;
+        case ConsoleKey.DownArrow: playerY++; break;
+        case ConsoleKey.LeftArrow: playerX--; break;
+        case ConsoleKey.RightArrow: playerX++; break;
+        case ConsoleKey.Escape: shouldExit = true; break;
         default:
-            playerX--;
+
             break;
     }
 

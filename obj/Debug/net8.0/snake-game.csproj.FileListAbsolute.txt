@@ -12,3 +12,4 @@ C:\Users\USER\Desktop\snake-game\obj\Debug\net8.0\refint\snake-game.dll
 C:\Users\USER\Desktop\snake-game\obj\Debug\net8.0\snake-game.pdb
 C:\Users\USER\Desktop\snake-game\obj\Debug\net8.0\snake-game.genruntimeconfig.cache
 C:\Users\USER\Desktop\snake-game\obj\Debug\net8.0\ref\snake-game.dll
+C:\Users\USER\Desktop\snake-game\obj\Debug\net8.0\snake-game.sourcelink.json
