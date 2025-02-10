@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\Desktop\\snake-game\\snake-game.csproj": {}
+    "c:\\Users\\USER\\Desktop\\snake-game\\snake-game.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\Desktop\\snake-game\\snake-game.csproj": {
+    "c:\\Users\\USER\\Desktop\\snake-game\\snake-game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Desktop\\snake-game\\snake-game.csproj",
+        "projectUniqueName": "c:\\Users\\USER\\Desktop\\snake-game\\snake-game.csproj",
         "projectName": "snake-game",
-        "projectPath": "C:\\Users\\USER\\Desktop\\snake-game\\snake-game.csproj",
+        "projectPath": "c:\\Users\\USER\\Desktop\\snake-game\\snake-game.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Desktop\\snake-game\\obj\\",
+        "outputPath": "c:\\Users\\USER\\Desktop\\snake-game\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

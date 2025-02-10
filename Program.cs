@@ -104,7 +104,7 @@ void Move()
 
     playerX = Math.Max(0, Math.Min(playerX, width));
     playerX = Math.Max(0, Math.Min(playerY, height));
-    /* for (int i = 0; i < player.Length; i++)
+    for (int i = 0; i < player.Length; i++)
      {
          Console.Write(" ");
      }
@@ -113,7 +113,7 @@ void Move()
 
      // Keep player position within the bounds of the Terminal window
      playerX = (playerX < 0) ? 0 : (playerX >= width ? width : playerX);
-     playerY = (playerY < 0) ? 0 : (playerY >= height ? height : playerY);*/
+     playerY = (playerY < 0) ? 0 : (playerY >= height ? height : playerY);
 
     // Draw the player at the new location
     Console.SetCursorPosition(playerX, playerY);
