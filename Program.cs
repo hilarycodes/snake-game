@@ -44,10 +44,12 @@ while (!shouldExit)
 }
 
 // Returns true if the Terminal was resized 
-bool TerminalResized() 
+void TerminalResized() 
 {
-    return height != Console.WindowHeight - 1 || width != Console.WindowWidth - 5;
-    
+    if (height != Console.WindowHeight - 1 || width != Console.WindowWidth - 5)
+    {
+        shouldExit = true;
+    }
 }
 
 // Displays random food at a random location
