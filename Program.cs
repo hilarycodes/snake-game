@@ -33,9 +33,9 @@ while (!shouldExit)
     Move();
     if (height != Console.WindowHeight - 1 || width != Console.WindowWidth - 5)
     {
-        Console.Clear();
         TerminalResized();
-        Console.WriteLine("Console was resized. Program exiting");
+        Console.Clear();
+        Console.WriteLine("Console was resized. The Game is now exiting");
         shouldExit = true;
     }
 }
@@ -78,6 +78,12 @@ void FreezePlayer()
     player = states[0];
 }
 
+void IncorrectMove()
+{
+    Console.Clear();
+    Console.WriteLine("Invalid move. Please use the arrow keys to move the player.");
+}
+
 // Reads directional input from the Console and moves the player
 void Move()
 {
@@ -86,11 +92,18 @@ void Move()
 
     switch (Console.ReadKey(true).Key)
     {
-        case ConsoleKey.UpArrow: playerY--; break;
-        case ConsoleKey.DownArrow: playerY++; break;
-        case ConsoleKey.LeftArrow: playerX--; break;
-        case ConsoleKey.RightArrow: playerX++; break;
-        case ConsoleKey.Escape: shouldExit = true; break;
+        case ConsoleKey.UpArrow:
+            playerY--; break;
+        case ConsoleKey.DownArrow:
+            playerY++; break;
+        case ConsoleKey.LeftArrow: 
+            playerX--; break;
+        case ConsoleKey.RightArrow: 
+            playerX++; break;
+        case ConsoleKey.Escape: 
+            shouldExit = true; break;
+        default: 
+            IncorrectMove(); break;
     }
 
     // Clear the characters at the previous position
