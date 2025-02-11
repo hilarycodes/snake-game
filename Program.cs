@@ -62,16 +62,6 @@ void ShowFood()
     Console.Write(foods[food]);
 }
 
-
-
-// Changes the player to match the food consumed
-/*void ChangePlayer()
-{
-    player = states[food];
-    Console.SetCursorPosition(playerX, playerY);
-    Console.Write(player);
-}*/
-
 // Temporarily stops the player from moving
 void FreezePlayer()
 {
@@ -114,9 +104,6 @@ void Move()
     {
         Console.Write(" ");
     }
-
-    //playerX = Math.Max(0, Math.Min(playerX, width));
-    //playerX = Math.Max(0, Math.Min(playerY, height));
 
     // Keep player position within the bounds of the Terminal window
     playerX = (playerX < 0) ? 0 : (playerX >= width ? width : playerX);
