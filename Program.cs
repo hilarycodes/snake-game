@@ -31,11 +31,11 @@ InitializeGame();
 while (!shouldExit)
 {
     Move();
-    if (height != Console.WindowHeight - 1 || width != Console.WindowWidth - 5)
+    if (TerminalResized())
     {
         TerminalResized();
         Console.Clear();
-        Console.WriteLine("Console was resized. The Game is now exiting");
+        Console.WriteLine("The Console was resized. The Game is now exiting");
         shouldExit = true;
     }
 }
@@ -61,12 +61,7 @@ void ShowFood()
     Console.SetCursorPosition(foodX, foodY);
     Console.Write(foods[food]);
 }
-void ShowNewPlayer()
-{
-    player = states[random.Next(0, states.Length)];
-    Console.SetCursorPosition(playerX, playerY);
-    Console.Write(player);
-}
+
 
 
 // Changes the player to match the food consumed
@@ -137,22 +132,32 @@ void Move()
             ShowFood();
         }
     }
-    ChangeFoodLocation();
-    ChangePlayer();
     void ChangePlayer()
     {
-        if(lastX == foodX && lastY == foodY)
+        if (lastX == foodX && lastY == foodY)
         {
             ShowNewPlayer();
         }
     }
+    ChangePlayer();
+    ChangeFoodLocation();
 }
 
-
+void ShowNewPlayer()
+{
+    player = states[food];
+    Console.SetCursorPosition(playerX, playerY);
+    Console.Write(player);
+}
 
 // Clears the console, displays the food and player
 void InitializeGame()
 {
+    Console.Clear();
+    Console.WriteLine("Welcome to the Snake Game I built");
+    System.Console.WriteLine("To exit press the 'esc' button");
+    System.Console.WriteLine("The game will start shorlty");
+    Thread.Sleep(5000);
     Console.Clear();
     ShowFood();
     Console.SetCursorPosition(0, 0);
