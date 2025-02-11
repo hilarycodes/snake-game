@@ -61,15 +61,21 @@ void ShowFood()
     Console.SetCursorPosition(foodX, foodY);
     Console.Write(foods[food]);
 }
+void ShowNewPlayer()
+{
+    player = states[random.Next(0, states.Length)];
+    Console.SetCursorPosition(playerX, playerY);
+    Console.Write(player);
+}
 
 
 // Changes the player to match the food consumed
-void ChangePlayer()
+/*void ChangePlayer()
 {
     player = states[food];
     Console.SetCursorPosition(playerX, playerY);
     Console.Write(player);
-}
+}*/
 
 // Temporarily stops the player from moving
 void FreezePlayer()
@@ -82,6 +88,7 @@ void IncorrectMove()
 {
     Console.Clear();
     Console.WriteLine("Invalid move. Please use the arrow keys to move the player.");
+    shouldExit = true;
 }
 
 // Reads directional input from the Console and moves the player
@@ -96,13 +103,13 @@ void Move()
             playerY--; break;
         case ConsoleKey.DownArrow:
             playerY++; break;
-        case ConsoleKey.LeftArrow: 
+        case ConsoleKey.LeftArrow:
             playerX--; break;
-        case ConsoleKey.RightArrow: 
+        case ConsoleKey.RightArrow:
             playerX++; break;
-        case ConsoleKey.Escape: 
+        case ConsoleKey.Escape:
             shouldExit = true; break;
-        default: 
+        default:
             IncorrectMove(); break;
     }
 
@@ -123,17 +130,25 @@ void Move()
     // Draw the player at the new location
     Console.SetCursorPosition(playerX, playerY);
     Console.Write(player);
-    //ChangeFoodLocation();
+    void ChangeFoodLocation()
+    {
+        if (lastX == foodX && lastY == foodY)
+        {
+            ShowFood();
+        }
+    }
+    ChangeFoodLocation();
+    ChangePlayer();
+    void ChangePlayer()
+    {
+        if(lastX == foodX && lastY == foodY)
+        {
+            ShowNewPlayer();
+        }
+    }
 }
 
-/*void ChangeFoodLocation()
-{
-    if (lastX == foodX && lastY == foodY)
-    {
-        ShowFood();
-        ChangePlayer();
-    }
-}*/
+
 
 // Clears the console, displays the food and player
 void InitializeGame()
