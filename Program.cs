@@ -31,6 +31,7 @@ InitializeGame();
 while (!shouldExit)
 {
     Move();
+    AdditionalMoves(); 
     if (TerminalResized())
     {
         TerminalResized();
@@ -62,13 +63,6 @@ void ShowFood()
     Console.Write(foods[food]);
 }
 
-// Temporarily stops the player from moving
-void FreezePlayer()
-{
-    Thread.Sleep(1000);
-    player = states[0];
-}
-
 void IncorrectMove()
 {
     Console.Clear();
@@ -93,7 +87,9 @@ void Move()
         case ConsoleKey.RightArrow:
             playerX++; break;
         case ConsoleKey.Escape:
-            shouldExit = true; break;
+            shouldExit = true;
+            Console.Clear();
+            Console.WriteLine("The game is exiting"); break;
         default:
             IncorrectMove(); break;
     }
@@ -135,6 +131,30 @@ void ShowNewPlayer()
     player = states[food];
     Console.SetCursorPosition(playerX, playerY);
     Console.Write(player);
+}
+
+void AdditionalMoves()
+{
+    var key = Console.ReadKey(true).Key;
+    if (player == states[2])
+    {
+        Thread.Sleep(2000);
+        if (key == ConsoleKey.RightArrow || key == ConsoleKey.LeftArrow)
+        {
+            playerX =+ 2;
+        }
+        else if (key == ConsoleKey.UpArrow || key == ConsoleKey.DownArrow)
+        {
+            playerY =+ 2;
+        }
+    }
+    else if (player == states[1]  && key == ConsoleKey.LeftArrow) 
+    {
+        playerX =+ 4;
+    }
+    else if (player == states[3]) { }
+    else if (player == states[4]) { }
+    else { }
 }
 
 // Clears the console, displays the food and player
